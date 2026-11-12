@@ -1,0 +1,28 @@
+name: odoo-buildable
+type: service
+icon: odoo
+title: Odoo (buildable)
+from: odoo
+fromVersionConstraint: "^1.0.0"
+fromVersion: "1.0.3"
+guidance: GUIDANCE.md
+
+labels:
+- odoo
+
+# The Odoo versions of the odoo service: the build starts from the same
+# wodby/odoo image and adds the app repository's modules.
+build:
+  connect: true
+  dockerfile: Dockerfile
+  boilerplates:
+  - name: vanilla
+    title: Vanilla Odoo
+    repo: https://github.com/wodby/odoo-boilerplate
+    branch: main
+
+workloads:
+- name: main
+  containers:
+  - name: odoo
+    build: true
