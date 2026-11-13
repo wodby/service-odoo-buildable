@@ -4,7 +4,7 @@ icon: odoo
 title: Odoo (buildable)
 from: odoo
 fromVersionConstraint: "^1.0.0"
-fromVersion: "1.0.4"
+fromVersion: "1.0.5"
 guidance: GUIDANCE.md
 
 labels:
